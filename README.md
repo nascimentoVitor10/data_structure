@@ -6,3 +6,7 @@ tórax em um hospital, com ênfase na organização da fila para laudo médico. 
 chegam ao hospital e exames são realizados mediante disponibilidade de aparelhos. A IA1 sugere diagnósticos 
 preliminares e os exames são encaminhados para laudo de acordo com a disponibilidade da equipe de radiologistas.
 
+Neste etapa do trabalho, o objetivo é implementar dois tipos abstratos de dados (TADs): Patient e
+Exam Esses TADs serão utilizados para modelar os pacientes que chegam ao hospital e os exames de
+raio-X.
+
