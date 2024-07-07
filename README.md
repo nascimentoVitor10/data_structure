@@ -10,3 +10,10 @@ Neste etapa do trabalho, o objetivo é implementar dois tipos abstratos de dados
 Exam Esses TADs serão utilizados para modelar os pacientes que chegam ao hospital e os exames de
 raio-X.
 
+## Parte 2 - Tipo abstrato de dados
+### Parte 2.2 - Patient
+O TAD **Patient** representa um paciente no sistema. Ele possui uma estrutura chamada de Patient com as seguintes informações:
+-
+-
+-
+-
