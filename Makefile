@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall
 
 # Source files
-SRCS = main.c my_string.c
+SRCS = main.c .c
 
 # Object files (replace .c with .o)
 OBJS = $(SRCS:.c=.o) # `main.o` and `my_string.o`
