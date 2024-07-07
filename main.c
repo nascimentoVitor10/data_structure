@@ -1,3 +1,11 @@
+// importação de bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include "functions.h"
+
+
 int main(void) {
   
   char nome_paciente[100];
