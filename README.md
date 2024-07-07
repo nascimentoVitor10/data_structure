@@ -16,6 +16,7 @@ O TAD **Patient** representa um paciente no sistema. Ele possui uma estrutura ch
 - Identificação única do paciente (int id); 
 - Nome do paciente (char* name);
 - Data de nascimento (struct tm* birthdate).
+  
 Além dessa estrutura, ele implementa as funções:
 - `Patient* create_patient(int id, const char *name, struct tm *birthdate)`: Essa função tem como objetivo cadastrar um novo paciente. Para isso, ela aloca memória para Patient utilizando a função malloc. Após isso, é verificado se a memória foi alocada corretamente, se a função malloc retorna NULL, a memória foi alocada de maneira incorreta e por meio do comando exit( 1 ) o programa é abortado. Mas, se a função malloc retorna qualquer valor diferente de NULL, a função começa a preencher o id, o nome e a data de nascimento do paciente. Após preencher os dados, a função retorna um ponteiro para a estrutura Patient.  
 - `void destroy_patient(Patient *patient)`: A função destroy_patient tem como função liberar a memória utilizada por meio do comando free. 
