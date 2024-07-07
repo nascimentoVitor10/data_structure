@@ -1,5 +1,5 @@
-# data_structure
-## 1. Trabalho de estrutura de dados
+# **Trabalho de estrutura de dados**
+## 1. Descrição do trabalho
 
 O trabalho prático de programação consiste em simular o processo de realização de exames de raio-X de
 tórax em um hospital, com ênfase na organização da fila para laudo médico. A cada momento, pacientes
