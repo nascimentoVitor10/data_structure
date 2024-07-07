@@ -1,4 +1,4 @@
-#include "my_string.h"
+#include "function.h"
 #include <stdio.h>
 
 int main(void)
