@@ -5,16 +5,16 @@ CC = gcc
 CFLAGS = -Wall
 
 # Source files
-SRCS = main.c .c
+SRCS = main.c functions.c
 
 # Object files (replace .c with .o)
-OBJS = $(SRCS:.c=.o) # `main.o` and `my_string.o`
+OBJS = $(SRCS:.c=.o) # `main.o` and `functions.o`
 
 # Executable name
 TARGET = my_program
 
 # Compile source files into object files
-%.o: %.c # matches `main.o` and `my_string.o`
+%.o: %.c # matches `main.o` and `functions.o`
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Link object files to create the executable
