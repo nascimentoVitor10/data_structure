@@ -1,5 +1,5 @@
 # data_structure
-## Parte 1 - trabalho de estrutura de dados
+## 1. Trabalho de estrutura de dados
 
 O trabalho prático de programação consiste em simular o processo de realização de exames de raio-X de
 tórax em um hospital, com ênfase na organização da fila para laudo médico. A cada momento, pacientes
@@ -10,10 +10,9 @@ Neste etapa do trabalho, o objetivo é implementar dois tipos abstratos de dados
 Exam Esses TADs serão utilizados para modelar os pacientes que chegam ao hospital e os exames de
 raio-X.
 
-## Parte 2 - Tipo abstrato de dados
-### Parte 2.2 - Patient
+## 2. Tipo abstrato de dados
+### 2.1 - Patient
 O TAD **Patient** representa um paciente no sistema. Ele possui uma estrutura chamada de Patient com as seguintes informações:
--
--
--
--
+- Identificação única do paciente (int id); 
+- Nome do paciente (char* name);
+- Data de nascimento (struct tm* birthdate).
