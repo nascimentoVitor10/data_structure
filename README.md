@@ -24,9 +24,11 @@ Além dessa estrutura, ele implementa as funções:
 - `const char* get_patient_name(Patient* patient)`:A função get_patient_name tem como função retornar o nome de determinado paciente, utilizando o comando return patient->name. Esse bloco de comando acessa o dado armazenado na estrutura Patient “char* name”. 
 - `struct tm* get_patient_birthdate(Patient *patient)`:A função get_patient_birthdate tem como função retornar a data de nascimento de determinado paciente, utilizando o comando return patient->birthdate. Esse bloco de comando acessa o dado armazenado na estrutura Patient “struct tm* birthdate”.
 ### 2.2 Exam
-O TAD **Exam** representa um exame realizado por um paciente no sistema.  Ele possui uma estrutura chamada de Exam com as seguintes informações:
+O TAD **Exam** representa um exame realizado por um paciente no sistema. Ele possui uma estrutura chamada de Exam com as seguintes informações:
 - Identificação única do exame (int id);
 - Identificação única do paciente (int patient_id);
 - Identificação única do aparelho de raio-X utilizado para realização do exame (int rx_id);
 - Horário de realização do exame (struct tm* time).
-  
+
+Além dessa estrutura, ele implementa as funções:
+- `Exam* create_exam(int id, int patient_id, int rx_id, struct tm *time)`: Essa função tem como objetivo criar um novo exame para determinado paciente. Para isso, ela aloca memória para Exam utilizando a função malloc. Após isso, é verificado se a memória foi alocada corretamente, se a função malloc retorna NULL, a memória foi alocada de maneira incorreta e por meio do comando exit( 1 ) o programa é abortado. Mas, se a função malloc retorna qualquer valor diferente de NULL, a função começa a preencher a identificação única do exame, identificação única do paciente, identificação única do aparelho de raio-X utilizado para realização do exame e o horário de realização do exame. Após preencher os dados, a função retorna um ponteiro para a estrutura Exam.  
