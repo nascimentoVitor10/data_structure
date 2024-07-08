@@ -7,7 +7,6 @@
 #include <string.h>
 #include <time.h>
 
-// Tipos de dados abstratos
 typedef struct patient Patient;
 typedef struct exam Exam;
 extern int birthdate;
