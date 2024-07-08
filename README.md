@@ -45,3 +45,6 @@ As funções utilitárias correspondem às funções usadas para auxiliar em tar
 -  `int verify_day(int ano, int mes, int dia, int* max_mes)`: essa função irá verificar se o dia de nascimento informado pelo paciente se enquadra dentro do mês informado, para que não haja nenhuma inconsistência/absurdo. Isso é devido ao fato de que há o ano bissexto, o qual possui um dia a mais, o que deve ser levado em consideração para pacientes que nasceram no dia 29 de fevereiro.
 
 -  `char* get_birthday_weekday(int ano, int mes, int dia, Patient* patient)`: essa função irá retornar o dia da semana em que a pessoa nasceu conforme a data informada.
+## Criadores
+- Vitor Ramos
+- Allicia Rocha
