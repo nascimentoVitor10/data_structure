@@ -4,6 +4,9 @@
 #include <string.h>
 #include <time.h>
 #include "functions.h"
+#include "patient.h"
+#include "exam.h"
+
 
 int main(void) {
 
