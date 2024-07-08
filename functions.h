@@ -6,25 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
-typedef struct patient Patient;
-typedef struct exam Exam;
-extern int birthdate;
-
-// Funções relacionadas ao paciente
-Patient *create_patient(int, const char *, struct tm *birthdate);
-void destroy_patient(Patient *patient);
-int get_patient_id(Patient *patient);
-const char *get_patient_name(Patient *patient);
-struct tm *get_patient_birthdate(Patient *patient);
-
-// Funções relacionadas ao exame
-Exam *create_exam(int id, int patient_id, int rx_id, struct tm *time);
-void destroy_exam(Exam *exam);
-int get_exam_id(Exam *exam);
-int get_exam_patient_id(Exam *exam);
-int get_exam_rx_id(Exam *exam);
-struct tm *get_exam_time(Exam *exam);
+#include "patient.h"
 
 // Funções utilitárias
 int verify_year(int ano);
