@@ -1,39 +1,16 @@
-# Compiler
-CC = gcc
+all: main
 
-# Compiler flags
-CFLAGS = -Wall
+CC = clang
+override CFLAGS += -g -Wno-everything -pthread -lm
 
-# Source files
-SRCS = main.c functions.c
+SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.c' -print)
+HEADERS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.h' -print)
 
-# Object files (replace .c with .o)
-OBJS = $(SRCS:.c=.o) # `main.o` and `functions.o`
+main: $(SRCS) $(HEADERS)
+	$(CC) $(CFLAGS) $(SRCS) -o "$@"
 
-# Executable name
-TARGET = my_program
+main-debug: $(SRCS) $(HEADERS)
+	$(CC) $(CFLAGS) -O0 $(SRCS) -o "$@"
 
-# Compile source files into object files
-%.o: %.c # matches `main.o` and `functions.o`
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Link object files to create the executable
-$(TARGET): $(OBJS) # matches `my_program`
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
-
-# Run the executable
-run: $(TARGET)
-	./$(TARGET)
-
-# Phony targets (not files) to avoid conflicts with files of the same name
-.PHONY: all compile run clean # `make` will always run these targets
-
-# Explicit compile target (produces the target program)
-compile: $(TARGET)
-
-# Default target (compile and run)
-all: compile run
-
-# Clean up
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f main main-debug
