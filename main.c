@@ -17,8 +17,10 @@ int main(void) {
   nome_paciente[strcspn(nome_paciente, "\n")] = 0;
 
   // leitura do ano de nascimento do paciente
-  printf("Informe o ano de nascimento: ");
-  scanf("%d",&ano);
+  do {
+    printf("Informe o ano de nascimento: ");
+    scanf("%d",&ano);
+  } while (verify_year(ano) == 0);
 
   // leitura do mês de nascimento do paciente
   do {
