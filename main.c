@@ -5,9 +5,8 @@
 #include <time.h>
 #include "functions.h"
 
-
 int main(void) {
-  
+
   char nome_paciente[100];
   int ano, mes, dia;
   int max_mes[] = {31,28, 30, 30, 31, 29, 31, 31, 30, 31, 30, 31}; // número máximo de dias de cada mês do ano
@@ -20,26 +19,26 @@ int main(void) {
   // leitura do ano de nascimento do paciente
   printf("Informe o ano de nascimento: ");
   scanf("%d",&ano);
-  
+
   // leitura do mês de nascimento do paciente
   do {
     printf("Informe o mês de nascimento: ");
     scanf("%d",&mes);
   } while (mes < 1 || mes > 12);
-  
+
   // leitura do dia de nascimento do paciente
   do {
     printf("Informe o dia de nascimento: ");
     scanf("%d",&dia);
   } while (verify_day(ano, mes, dia, &max_mes) != 1);
   printf("\n");
-    
+
   // Definindo uma data de nascimento fictícia para o paciente
   struct tm birthdate = {0}; // Inicializar a estrutura com zeros
   birthdate.tm_year = ano - 1900;
   birthdate.tm_mon = mes - 1; 
   birthdate.tm_mday = dia; 
-  
+
   // Criando um paciente
   Patient *patient = create_patient(1, nome_paciente, &birthdate);
 
