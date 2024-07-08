@@ -7,25 +7,25 @@
 //TIPOS ABSTRATOS DE DADOS
 
 //TAD Patient
-typedef struct{
+struct patient{
   int id;
   char* name;
   struct tm* birthdate;
-} Patient;
+}; 
 
 // TAD Exam
-typedef struct{
+struct exam{
   int id; 
   int patient_id; 
   int rx_id;
   struct tm* time;
-} Exam;
+};
 
 //FUNÇÕES RELACIOINADAS AO PACIENTE
 
 // cria paciente
 Patient* create_patient(int id, const char *name, struct tm *birthdate){
-  Patient* patient = malloc(sizeof(Patient)); // Alocar memória para a estrutura Patient
+  Patient* patient = malloc(sizeof(struct patient)); // Alocar memória para a estrutura Patient
   // Verifica se a memória foi alocada corretamente
   if (patient == NULL){
     printf("Erro ao alocar memória!\n");
@@ -33,12 +33,7 @@ Patient* create_patient(int id, const char *name, struct tm *birthdate){
   }
 
   patient->id = id; // Preencher ID do paciente
-  patient->name = strdup(name); // Preencher o nome do paciente
-  if (patient == NULL){
-    printf("Erro ao preencher o nome do paciente!\n");
-    free(patient);
-    exit(1);
-  }
+  patient->name = name; // Preencher o nome do paciente
   patient->birthdate = birthdate; // Preencher a data de nascimento do paciente
 
   return patient; 
@@ -70,10 +65,11 @@ struct tm* get_patient_birthdate(Patient *patient){
 
 // cria o exame
 Exam* create_exam(int id, int patient_id, int rx_id, struct tm *time){
-  Exam* exam = malloc(sizeof(Exam)); // Alocar memória para a estrutura Exam 
+  Exam* exam = malloc(sizeof(struct exam)); // Alocar memória para a estrutura Exam
+  // Verifica se a memória foi alocada corretamente
   if (exam == NULL){
     printf("Erro ao alocar memória!\n");
-    exit(1);
+    exit(1); // Abortar programa caso a memória não foi alocada corretamente
   }
   exam->id = id;
   exam->patient_id = patient_id;
@@ -128,24 +124,6 @@ int is_bissexto(int ano){
   return 0;
 }
 
-// função para verificar ano bissexto
-int is_bissexto(int ano){
-  if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))
-    return 1;
-  return 0;
-}
-
-// função para verificar se o dia pertence ao mês informado
-int verify_day(int ano, int mes, int dia, int* max_mes){
-  if (dia < 1 || dia > max_mes[mes -1]){
-    return 0; 
-  }
-  if (mes == 2 && is_bissexto(ano) && dia == 29){
-    return 1;
-  }
-  return 1;
-}
-
 // função para verificar se o dia pertence ao mês informado
 int verify_day(int ano, int mes, int dia, int* max_mes){
   if (dia < 1 || dia > max_mes[mes -1]){
@@ -163,16 +141,10 @@ char* get_birthday_weekday(int ano, int mes, int dia, Patient* patient) {
     char* day[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     static int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
-  
+
     int y = ano - (mes < 3);
 
     int dow = (y + y / 4 - y / 100 + y / 400 + t[mes - 1] + dia) % 7;
-    
+
     return day[(dow + 6) % 7 + 1];
 }
-
-
-
-
-
-
