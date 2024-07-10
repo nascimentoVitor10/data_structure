@@ -27,8 +27,7 @@ Patient *create_patient(int id, const char *name, struct tm *birthdate) {
                  // de memória corretamente
   }
 
-  // Alocar memória para a estrutura Patient e verifica se a memória foi alocada
-  // corretamente
+  // Alocar memória para a estrutura Patient e verifica se a memória foi alocada corretamente
   Patient *patient = malloc(sizeof(struct patient));
 
   if (patient == NULL) {
@@ -67,15 +66,33 @@ void destroy_patient(Patient *patient) {
 
 // função para retornar ID do paciente
 int get_patient_id(Patient *patient) {
+  // Verificar se o ponteiro patient é NULL
+  if (patient == NULL) {
+    printf("Erro: o ponteiro é NULL\n");
+    return NULL; // Retorna NULL caso o ponteiro não aponte para nenhum endereço de memória corretamente
+  }
+  
   return patient->id;
 }
 
 // função para retornar o nome do paciente
-const char *get_patient_name(Patient *patient) { 
+const char *get_patient_name(Patient *patient) {
+  // Verificar se o ponteiro patient é NULL
+  if (patient == NULL) {
+    printf("Erro: o ponteiro é NULL\n");
+    return NULL; // Retorna NULL caso o ponteiro não aponte para nenhum endereço de memória corretamente
+  }
+  
   return patient->name; 
 }
 
 // estrutura para retornar data de nascimento
 struct tm *get_patient_birthdate(Patient *patient) { 
+  // Verificar se o ponteiro patient é NULL
+  if (patient == NULL) {
+    printf("Erro: o ponteiro é NULL\n");
+    return NULL; // Retorna NULL caso o ponteiro não aponte para nenhum endereço de memória corretamente
+  }
+  
   return patient->birthdate;
 }
