@@ -66,12 +66,16 @@ void destroy_patient(Patient *patient) {
 }
 
 // função para retornar ID do paciente
-int get_patient_id(Patient *patient) { return patient->id; }
+int get_patient_id(Patient *patient) {
+  return patient->id;
+}
 
 // função para retornar o nome do paciente
-const char *get_patient_name(Patient *patient) { return patient->name; }
+const char *get_patient_name(Patient *patient) { 
+  return patient->name; 
+}
 
 // estrutura para retornar data de nascimento
-struct tm *get_patient_birthdate(Patient *patient) {
+struct tm *get_patient_birthdate(Patient *patient) { 
   return patient->birthdate;
 }
