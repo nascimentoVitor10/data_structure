@@ -54,15 +54,9 @@ Patient *create_patient(int id, const char *name, struct tm *birthdate) {
 // função para destruir a estrutura alocada para o paciente
 void destroy_patient(Patient *patient) {
   if (patient != NULL) {
-    /*if (patient->name != NULL) {
-      free(patient->name); // Liberar memória alocada para name
-      patient->name = NULL;
-    }
-    if (patient->birthdate != NULL) {
-      free(patient->birthdate); // Liberar memória alocada para birthdate
-      patient->birthdate = NULL;
-    }*/
     free(patient); // Liberar memória alocada para estrutura Patient
+    free(patient->name);
+    free(patient->birthdate);
   }
 }
 
