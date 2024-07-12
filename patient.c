@@ -19,7 +19,7 @@ Patient *create_patient(int id, const char *name, struct tm *birthdate) {
     printf("Erro: o ponteiro name não aponta para nenhum endereço de memória corretamente\n");
     return NULL; // Retorna NULL caso o ponteiro não aponta para nenhum endereço de memória corretamente
   } else if (birthdate == NULL) {
-    printf("Erro: o ponteiro name não aponta para nenhum endereço de memória corretamente\n");
+    printf("Erro: o ponteiro birthdate não aponta para nenhum endereço de memória corretamente\n");
       return NULL; // Retorna NULL caso o ponteiro não aponta para nenhum endereço de memória corretamente
   }
 
