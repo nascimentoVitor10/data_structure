@@ -32,8 +32,9 @@ O TAD **Exam** representa um exame realizado por um paciente no sistema. Ele pos
 
 Além dessa estrutura, ele implementa as funções:
 - `Exam* create_exam(int id, int patient_id, int rx_id, struct tm *time)`: Essa função tem como objetivo criar um novo exame para determinado paciente. Para isso, ela aloca memória para Exam utilizando a função malloc. Após isso, é verificado se a memória foi alocada corretamente, se a função malloc retorna NULL, a memória foi alocada de maneira incorreta e retorno NULL. Mas, se a função malloc retorna qualquer valor diferente de NULL, a função começa a preencher a identificação única do exame, identificação única do paciente, identificação única do aparelho de raio-X utilizado para realização do exame e o horário de realização do exame. Após preencher os dados, a função retorna um ponteiro para a estrutura Exam.
--  `void destroy_exam(Exam *exam)`: A função destroy_exam tem como função liberar a memória utilizada por meio do comando free.
--   `int get_exam_id(Exam *exam)`: A função get_exam_id tem como função retornar o id do exame de determinado paciente.
+- `void destroy_exam(Exam *exam)`: A função destroy_exam tem como função liberar a memória utilizada por meio do comando free.
+- `int get_exam_id(Exam *exam)`: A função get_exam_id tem como função retornar o id do exame de determinado paciente.
+- `struct tm* get_exam_time(Exam *exam)`: A função get_exam_time retorna o horário de realização do exame.
 ## Criadores
 - Vitor Ramos
 - Allicia Rocha
