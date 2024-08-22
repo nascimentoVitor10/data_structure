@@ -3,7 +3,7 @@
 
 O trabalho prático de programação consiste em simular o processo de realização de exames de raio-X de
 tórax em um hospital, com ênfase na organização da fila para laudo médico. A cada momento, pacientes
-chegam ao hospital e exames são realizados mediante disponibilidade de aparelhos. A IA1 sugere diagnósticos 
+chegam ao hospital e exames são realizados mediante disponibilidade de aparelhos. A IA sugere diagnósticos 
 preliminares e os exames são encaminhados para laudo de acordo com a disponibilidade da equipe de radiologistas.
 
 Neste etapa do trabalho, o objetivo é implementar dois tipos abstratos de dados (TADs): Patient e
